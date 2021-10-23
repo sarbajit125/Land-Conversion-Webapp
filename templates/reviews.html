@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Review and comment page of My website">
+  <meta name="author" content="Sarbajit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='review.css') }}">
+</head>
+<body>
+  <div class="heading">
+    <img src="{{ url_for('static',filename='advlogo.jpeg') }}" alt="Advocate logo">
+    <h1>Reviews and Comments</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('insert') }}">Add New Application</a>
+      <a href="{{ url_for('query') }}">Check Status</a>
+      <a href="{{ url_for('logout') }}">Sign Out</a>
+    </nav>
+  </div>
+  <div class="comments">
+    <p>Please enter your Request down below. Fill up the box appropriately</p>
+    <form action="{{ url_for('review') }}" method="POST">
+      <label for="username">
+          <input type="text" name="username" value="{{ username }}"  id="username" readonly>
+      </label>
+      <label>Name
+        <input type="text" name="name" required>
+      </label>
+      <label>Contact No.
+        <input type="number" name="contact">
+      </label>
+      <label  for="email">
+          E-Mail
+          <input type="email" name="email" id="email" required>
+      </label>
+      <label>Write down your grievance here
+        <textarea rows="10" cols="70" name="comment">Enter your text here</textarea>
+      </label>
+      <label>Please rate our website</label>
+      <div class="radio">
+        <label for="Great">
+        <input type="radio" id="Great" name="rating" value="5">
+        Great</label>
+        <label for="Good">
+        <input type="radio" id="Good" name="rating" value="4">
+        Good</label>
+        <label for="Average">
+        <input type="radio" id="Average" name="rating" value="3">
+        Average</label>
+        <label for="Poor">
+        <input type="radio" id="Poor" name="rating" value="2">
+        Poor</label>
+        <label for="Bad">
+        <input type="radio" id="Bad" name="rating" value="1">
+        Bad</label>
+      </div>
+      <button type="submit" onclick="alert('Your application submitted')">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </div>
+  <div class="clr"></div>
+  <footer>
+    <div class="footcomment">
+      <h3>About</h3>
+      <p>This website is developed using Flask,HTML5 and CSS with IDE Pycharm</p>
+      <p>Last updated on 09-10-2021</p>
+    </div>
+  </footer>
+</body>
+</html>

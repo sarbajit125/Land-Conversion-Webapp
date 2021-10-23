@@ -1,0 +1,7 @@
+git init
+git add .
+git commit -m "1st Commit"
+git remote add origin https://github.com/sarbajit125/test-git.git
+git push -u origin master
+git push origin master
+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

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Homepage of My website">
+  <meta name="author" content="Sarbajit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversion records</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='review.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home.css') }}">
+</head>
+<body>
+  <div class="heading">
+    <img src="{{ url_for('static',filename='advlogo.jpeg') }}" alt="Advocate logo">
+    <h1>{{ ['Welcome','Hello','Howdy','Hi There']|random }} {{ username }}!!</h1>
+    <nav>
+      <a href="{{ url_for('insert') }}">Add New Application</a>
+      <a href="{{ url_for('query') }}">Check Status</a>
+      <a href="{{ url_for('review') }}" target="_blank">Review the Site</a>
+      <a href="{{ url_for('logout') }}">Sign Out</a>
+    </nav>
+  </div>
+  <div class="mainbox">
+    <p>
+      Hello there and welcome to this website get information about records and their progression.
+      Use Queries tab to search related to Application.
+      Login to make Request to update information
+    </p>
+  </div>
+  <div class="sidebar">
+    <h1>Useful Links</h1>
+    <nav>
+      <a href="http://dwistodisha.nic.in/revonline/">Apply for Conversion</a>
+      <a href="http://dwistodisha.nic.in/revonline/DownloadReceipr.aspx">Download Payment Receipts</a>
+      <a href="http://dwistodisha.nic.in/CaseStatus.aspx">See Case Status</a>
+    </nav>
+  </div>
+  <div class="clr"></div>
+    <footer class="foot">
+      <h3>Disclaimer</h3>
+      <h4>Contact us</h4>
+      <div class="clr"></div>
+      <p>
+        The contents displayed here are provided by the Bhubaneswar Tahasil Administration.
+        Any Queries may be sent to the Tahasildar, Bhubaneswar
+      </p>
+        <ul>
+          <li>Mobile:(+91)993745840</li>
+          <li>Email:faramirsingh@gmail.com</li>
+          <li><a href="#">Facebook</a> </li>
+          <li><a href="#">Twitter</a> </li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+.appform{
+  padding: 20px;
+  margin: 120px 10px 20px;
+  border: 2px solid silver;
+   box-sizing: border-box;
+  position: relative;
+}
+
+.appform h2{
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+  background: cornflowerblue;
+  text-align: center;
+  margin: 5px;
+}
+
+.appform form{
+  display: block;
+  padding: 20px;
+  margin: 5px;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+.appform label{
+  display: inline-block;
+  margin: 20px;
+  padding: 10px;
+}
+
+.appform input{
+  margin-left: 20px;
+  padding: 10px;
+  width: 250px;
+  margin-top: 5px;
+  -moz-appearance: textfield;
+}
+
+.appform button{
+  width: 240px;
+  height: auto;
+  padding:20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-stretch: extra-expanded;
+  background: deepskyblue;
+  color: white;
+  position: relative;
+  margin: 0 auto;
+}
+
+.appform button[type='reset']{
+  background: red;
+  color: white;
+}
+
+.appform button:hover{
+  background: darkslateblue;
+}
+
+.appform button[type='reset']:hover{
+  background: darkred;
+}
+
+.insertflash{
+  padding: 5px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 25px;
+  color: red;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Query page of My website">
+  <meta name="author" content="Sarbajit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Query</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='review.css') }}">
+  <link  rel="stylesheet" type="text/css" href="{{ url_for('static',filename='query.css') }}">
+</head>
+<body>
+  <div class="heading">
+    <img src="{{ url_for('static',filename='advlogo.jpeg') }}" alt="Advocate logo">
+    <h1>Application Status</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('insert') }}">Insert New Application</a>
+      <a href="{{ url_for('review') }}" target="_blank">Review the Site</a>
+      <a href="{{ url_for('logout') }}">Sign Out</a>
+    </nav>
+  </div>
+  <div class="query">
+    <label for="dropdown"> Choose one
+      <select name="choice" id="dropdown">
+        <option value="applicationID">Application ID</option>
+        <option value="khataNo">Khata No.</option>
+        <option value="transactionID">Transaction ID</option>
+      </select>
+    </label>
+      <form action="{{ url_for('query') }}" method="POST">
+        <label>
+          Application ID
+          <input type="number" name="AppID">
+        </label>
+        <label>
+          Khata No
+          <input type="number" name="khata">
+        </label>
+        <label>
+          Transcation ID
+          <input type="text" name="tID2">
+        </label>
+        <button type="submit">Show Result</button>
+        <button type="reset">Reset</button>
+      </form>
+  </div>
+  <div class="result">
+      {% if data is defined %}
+    <table>
+      <caption> Application Status</caption>
+      <tr>
+        <th>Application No.</th>
+        <th>Mouza</th>
+        <th>Khata No.</th>
+        <th>Total area</th>
+        <th>Application Date</th>
+        <th> OLR No.</th>
+        <th>Action</th>
+      </tr>
+
+      <tr>
+        <td>{{ data['AppID'] }} </td>
+        <td>{{ data['mouza'] }} </td>
+        <td>{{ data['khata'] }} </td>
+        <td>{{ data['tarea'] }} Acres </td>
+        <td>{{ data['doa'] }} </td>
+        <td>{{ data['olr'] }} </td>
+        <td>
+          <a href="{{ url_for('update',AppID=data.AppID) }}" id="updatequery">Update</a>
+          <a href="{{ url_for('delete',AppID=data.AppID) }}" id="deletequery">Delete</a>
+        </td>
+      </tr>
+
+    </table>
+      {% endif %}
+  </div>
+  <div id="signupflashmessage">
+      {% if msg is defined %}
+        {{ msg }}
+      {% endif   %}
+  </div>
+  <footer>
+    <div class="footcomment">
+      <h3>Disclaimer</h3>
+      <p>The contents displayed here are provided by the Bhubaneswar Tahasil Administration.
+        Any Queries may be sent to the Tahasildar, Bhubaneswar</p>
+      <p>Last updated on 09-10-2021</p>
+    </div>
+  </footer>
+
+</body>
+</html>

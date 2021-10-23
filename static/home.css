@@ -1,0 +1,101 @@
+
+.navigation a{
+  color: black ;
+  background: white;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.navigation a:hover{
+  color: black ;
+  background: orangered;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.mainbox{
+  font-size: large;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid silver;
+  margin-top: 10px;
+}
+
+.sidebar{
+  text-align: center;
+  padding: 35px;
+  margin-bottom: 70px;
+}
+
+.sidebar h1{
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.sidebar a{
+  color: black ;
+  background: cornflowerblue;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 50px;
+  margin-bottom: 30px;
+}
+
+.sidebar a:hover{
+  color: black ;
+  background: orangered;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 10px;
+}
+
+.foot {
+  padding: 15px;
+  border-top: 4px red solid;
+  background: #3d3d33;
+  color: white;
+  clear: both;
+}
+
+.foot h3{
+  float: left;
+}
+.foot p {
+  padding: 15px;
+  float: left;
+  width: 50%;
+
+}
+.foot h4{
+  float: right;
+  font-size: larger;
+}
+
+.foot ul{
+  list-style-type: none;
+  text-align: right;
+}
+
+.foot a{
+  text-decoration: none;
+  color: skyblue;
+  font-style: italic;
+  padding: 5px;
+}
+.foot a:hover{
+  font-weight: bold;
+  color: blue;
+  font-style: italic;
+  padding: 5px;
+}

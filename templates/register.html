@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Sarbajit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Form</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='review.css') }}">
+</head>
+<body>
+<div class="container">
+  <header class="heading">
+    <img src="{{ url_for('static',filename='advlogo.jpeg') }}" alt="Advocate logo">
+  <h1> Registration Page</h1>
+  <nav>
+    <a href="{{ url_for('login') }}">Login</a>
+  </nav>
+  </header>
+  <main class="comments">
+    <p> Please enter the following details correctly</p>
+    <form action="{{ url_for('register') }}" method="POST">
+      <label for="username">
+      Username
+      <input type="text" name="username" id="username" required>
+    </label>
+    <label for="password">
+      Password
+      <input type="password" name="password" id="password" required>
+    </label>
+      <label for="email">
+        E-mail
+        <input type="email" name="email" id="email" required>
+      </label>
+    <label>
+      <button type="submit" id="signup">Signup</button>
+      <button type="reset" id="reset">Reset</button>
+    </label>
+    </form>
+  </main>
+  <footer id="signupflashmessage">
+    <h2> {{ msg }}</h2>
+  </footer>
+</div>
+
+</body>
+</html>

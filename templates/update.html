@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Review and comment page of My website">
+  <meta name="author" content="Sarbajit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update ApplicationId</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='review.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='add.css') }}">
+</head>
+<body>
+<div class="container">
+    {% if data is defined %}
+  <header class="heading">
+    <h1>Update Application:{{ data['AppID'] }} </h1>
+  </header>
+  <main class="appform">
+    <form action="{{ url_for('update',AppID = data.AppID)}}" method="POST">
+    <h2>Applicant Details</h2>
+    <label for="firstnameAPP">
+      First Name
+      <input type="text" id="firstnameAPP" name="firstname" value="{{ data['firstName'] }}" required>
+    </label>
+    <label for="lastnameAPP">
+      Last Name
+      <input type="text" id="lastnameAPP" name="lastname" value="{{ data['lastName'] }}">
+    </label>
+    <label for="contactNoAPP">
+      Contact No.
+      <input type="text" id="contactNoAPP" name="contact" value="{{ data['contact'] }}">
+    </label>
+      <h2>Record Details</h2>
+      <label for="mouzaAPP">
+        Mouza
+        <input type="text" id="mouzaAPP" name="mouza" value="{{ data['mouza'] }}" required>
+      </label>
+      <label for="KhataAPP">
+        Khata No.
+        <input type="text" id="KhataAPP" name="khata" value="{{ data['khata'] }}" required>
+      </label>
+      <label for="plotAPP">
+        Plot No.
+        <input type="text" id="plotAPP" name="plot" value="{{ data['plot'] }}" required>
+      </label>
+      <label for="totalArr">
+        Total Area(in Acres)
+        <input type="text" id="totalArr" name="tarea" value="{{ data['tarea'] }}" required>
+      </label>
+      <h2>Conversion Details</h2>
+      <label for="appdetails">
+        Application No.
+        <input type="text" id="appdetails" name="AppID"  value="{{ data['AppID'] }}" readonly>
+      </label>
+      <label for="doa">
+        Date of registration
+        <input type="date" id="doa" name="doa" value="{{ data['doa'] }}">
+      </label>
+      <label for="payment1">
+        Application Payment Charges(in Rupees)
+        <input type="text" id="payment1" name="payment1" value="{{ data['payment1'] }}">
+      </label>
+      <label for="payment2">
+        Conversion Payment Charges(in Rupees)
+        <input type="text" id="payment2" name="payment2" value="{{ data['payment2'] }}">
+      </label>
+        <label for="tID">
+        Transaction Id No.
+        <input type="text" id="tID" name="tID" value="{{ data['tID'] }}">
+      </label>
+      <label for="olrinput">
+        OLR number
+        <input type="text" id="olrinput" name="olr" value="{{ data['olr'] }}">
+      </label>
+      <br>
+      <label>
+        <button type="submit" id="updateinto">Update</button>
+      </label>
+    </form>
+  </main>
+    {%  endif %}
+  <div class="insertflash">
+      {% if msg is defined %}
+    <h3> {{ msg }}</h3>
+      {% endif %}
+  </div>
+</div>
+</body>
+</html>

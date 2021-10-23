@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Review and comment page of My website">
+  <meta name="author" content="Sarbajit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='review.css') }}">
+</head>
+<body>
+<div class="container">
+<header class="heading">
+  <img src="{{ url_for('static',filename='advlogo.jpeg') }}" alt="Advocate logo">
+  <h1> Login</h1>
+  <nav>
+    <a href="{{ url_for('register') }}">Register</a>
+  </nav>
+</header>
+<div class="comments">
+  <p> Please enter your username and password below</p>
+  <form action="{{ url_for('login') }}" method="POST">
+    <label for="username">
+      Username
+      <input type="text" name="username" id="username" required>
+    </label>
+    <label for="password">
+      Password
+      <input type="password" name="password" id="password" required>
+    </label>
+    <label>
+      <button type="submit" id="login">Login</button>
+      <button type="reset" id="reset">Reset</button>
+    </label>
+    <label>
+      <a href="#" id="forgotpassword">Click Here!! If you forgot password</a>
+    </label>
+  </form>
+</div>
+    <div id="signupflashmessage">
+            {{ msg }}
+    </div>
+<footer class="footcomment">
+   <h3>About</h3>
+  <p>This website is developed using Flask,HTML5 and CSS with IDE Pycharm</p>
+  <p>Last updated on 09-10-2021</p>
+</footer>
+</div>
+</body>
+</html>

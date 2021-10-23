@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+}
+
+.logout{
+  font-size: 20px;
+  color: goldenrod;
+  padding: 20px;
+  font-weight: bolder;
+  font-family: "Blackadder ITC","Colonna MT",'monospace';
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 50%;
+}
+
+.logout a{
+  text-decoration: none;
+  color: grey;
+
+}

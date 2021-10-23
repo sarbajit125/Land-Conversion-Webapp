@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Review and comment page of My website">
+  <meta name="author" content="Sarbajit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addition Form</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='review.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='add.css') }}">
+</head>
+<body>
+<div class="container">
+  <header class="heading">
+    <img src="{{ url_for('static',filename='advlogo.jpeg') }}" alt="Advocate logo">
+    <h1>Add to Database</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('query') }}">Check Status</a>
+      <a href="{{ url_for('review') }}" target="_blank">Review the Site</a>
+      <a href="{{ url_for('logout') }}">LogOut</a>
+    </nav>
+  </header>
+  <main class="appform">
+    <form action="{{ url_for('insert') }}" method="POST">
+    <h2>Applicant Details</h2>
+    <label for="firstnameAPP">
+      First Name
+      <input type="text" id="firstnameAPP" name="firstname" required>
+    </label>
+    <label for="lastnameAPP">
+      Last Name
+      <input type="text" id="lastnameAPP" name="lastname">
+    </label>
+    <label for="contactNoAPP">
+      Contact No.
+      <input type="text" id="contactNoAPP" name="contact">
+    </label>
+      <h2>Record Details</h2>
+      <label for="mouzaAPP">
+        Mouza
+        <input type="text" id="mouzaAPP" name="mouza" required>
+      </label>
+      <label for="KhataAPP">
+        Khata No.
+        <input type="text" id="KhataAPP" name="khata" required>
+      </label>
+      <label for="plotAPP">
+        Plot No.
+        <input type="text" id="plotAPP" name="plot" required>
+      </label>
+      <label for="totalArr">
+        Total Area(in Acres)
+        <input type="text" id="totalArr" name="tarea" required>
+      </label>
+      <h2>Conversion Details</h2>
+      <label for="appdetails">
+        Application No.
+        <input type="text" id="appdetails" name="AppID" required>
+      </label>
+      <label for="dob">
+        Date of registration
+        <input type="date" id="dob" name="doa" required>
+      </label>
+      <label for="payment1">
+          Application Payment Charges(in Rupees)
+        <input type="text" id="payment1" name="payment1">
+      </label>
+      <label for="payment2">
+        Conversion Payment Charges(in Rupees)
+        <input type="text" id="payment2" name="payment2">
+      </label>
+      <label for = "tID">
+          Transaction ID No
+          <input type="text" id="tID" name="tID">
+      </label>
+      <label for="olrinput">
+        OLR number
+        <input type="text" id="olrinput" name="olr">
+      </label>
+      <br>
+      <label>
+        <button type="submit" id="addinto">Insert</button>
+      </label>
+        <button type="reset" id="reset">Reset</button>
+    </form>
+  </main>
+  <div class="insertflash">
+      {% if msg is defined %}
+    <h3> {{ msg }}</h3>
+  </div>
+    {% endif %}
+  <footer class="footcomment">
+    <p>
+      Please provide data carefully, Changes not possible once submitted.
+      Any Queries may be sent to the Tahasildar, Bhubaneswar
+    </p>
+  </footer>
+</div>
+</body>
+</html>
